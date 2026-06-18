@@ -10,7 +10,12 @@ find_package(SDL2_ttf REQUIRED)
 
 add_executable(023_the_grimoire main.cpp
         src/RenderWindow.cpp
-        src/Logger.cpp
+        src/Logger/Logger.cpp
+        src/Systems/KeystrokeSystem.h
+        src/Engine/Entity.h
+        src/Systems/System.h
+        src/Engine/Scene.h
+        src/Engine/Component.h
 )
 
 target_link_libraries(023_the_grimoire PRIVATE
@@ -22,6 +27,7 @@ target_link_libraries(023_the_grimoire PRIVATE
 
 target_include_directories(023_the_grimoire PRIVATE
         ${CMAKE_SOURCE_DIR}/src
+        ${CMAKE_SOURCE_DIR}/src/vendor
         ${SDL2_INCLUDE_DIRS}
         ${SDL2_IMAGE_INCLUDE_DIRS}
         ${SDL2_MIXER_INCLUDE_DIRS}
